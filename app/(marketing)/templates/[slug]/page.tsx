@@ -83,7 +83,7 @@ export default async function TemplateDetailsPage({ params }: TemplatePageProps)
                 Lihat Live Demo <ExternalLink className="w-4 h-4" />
               </Link>
               <Link
-                href="https://wa.me/your-number"
+                href={`https://wa.me/6283153248283?text=Halo%2C%20saya%20tertarik%20memiliki%20website%20${encodeURIComponent(template.title)}.%20Bisa%20bantu%20saya%20untuk%20mewujudkannya%3F`}
                 target="_blank"
                 className="flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-emerald-900/10 px-10 text-sm font-bold text-emerald-900 transition-all hover:bg-emerald-50 dark:border-emerald-500/20 dark:text-emerald-50 dark:hover:bg-emerald-900/30"
               >

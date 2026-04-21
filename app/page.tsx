@@ -34,12 +34,21 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-10 dark:opacity-20 pointer-events-none">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-emerald-500 filter blur-[120px] rounded-full" />
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-gold filter blur-[120px] rounded-full" />
+        {/* Background Image Layer */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            src="/hero-background.png"
+            alt="Premium Background"
+            fill
+            className="object-cover opacity-90 dark:opacity-70"
+            priority
+          />
+          {/* Subtle Color Overlay to Blend with Emerald Theme */}
+          <div className="absolute inset-0 bg-emerald-950/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/40 to-emerald-950" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800 mb-8 slide-up">
               <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
@@ -64,9 +73,13 @@ export default function Home() {
               >
                 Jelajahi Katalog <ArrowRight className="w-4 h-4" />
               </Link>
-              <button className="px-8 h-14 border-2 border-emerald-900/10 dark:border-emerald-500/20 font-bold rounded-full text-emerald-900 dark:text-emerald-50 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-all">
+              <Link 
+                href="https://wa.me/6283153248283?text=Halo%2C%20saya%20tertarik%20dengan%20tawaran%20Anda.%20Namun%2C%20ada%20beberapa%20hal%20yang%20perlu%20saya%20konsultasikan%20untuk%20memperjelas%20apa%20yang%20saya%20harapkan.%20Bisakah%20saya%20meminta%20waktunya%3F%20Terima%20kasih"
+                target="_blank"
+                className="flex items-center justify-center px-8 h-14 border-2 border-emerald-900/10 dark:border-emerald-500/20 font-bold rounded-full text-emerald-900 dark:text-emerald-50 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 transition-all"
+              >
                 Konsultasi Gratis
-              </button>
+              </Link>
             </div>
 
             <div className="mt-16 flex items-center gap-8 py-8 border-y border-emerald-900/5 dark:border-emerald-500/10 w-full justify-center flex-wrap">
