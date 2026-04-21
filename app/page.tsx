@@ -1,12 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Star, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import logoCircle from "./logo-circle.png";
 import PackageCarousel from "@/components/marketing/PackageCarousel";
+import AdvantagesAccordion from "@/components/marketing/AdvantagesAccordion";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-[#022c22]">
+      <div className="fixed inset-0 pointer-events-none -z-20 opacity-30 dark:opacity-20 translate-y-[-10%]">
+        <div className="absolute top-0 right-0 w-[60%] h-[60%] bg-emerald-500/20 filter blur-[150px] rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[60%] h-[60%] bg-gold/10 filter blur-[150px] rounded-full" />
+      </div>
+
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#022c22]/80 backdrop-blur-md border-b border-emerald-100 dark:border-emerald-900/50">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -35,7 +41,6 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Background Image Layer */}
         <div className="absolute inset-0 pointer-events-none">
           <Image
             src="/hero-background.png"
@@ -44,7 +49,6 @@ export default function Home() {
             className="object-cover opacity-90 dark:opacity-70"
             priority
           />
-          {/* Subtle Color Overlay to Blend with Emerald Theme */}
           <div className="absolute inset-0 bg-emerald-950/60" />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-950/40 to-emerald-950" />
         </div>
@@ -106,7 +110,7 @@ export default function Home() {
           <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-gold filter blur-[100px] rounded-full animate-pulse" />
         </div>
 
-        <div className="max-w-xld mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-10 text-emerald-950 dark:text-emerald-50">
             <h2 className="text-3xl lg:text-5xl font-bold tracking-tight mb-4">Pilih Paket <span className="gold-text">Terbaik Anda</span></h2>
             <p className="text-emerald-900/60 dark:text-emerald-100/60 max-w-xl mx-auto">
@@ -118,8 +122,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Advantages Section */}
+      <AdvantagesAccordion />
+
       {/* Footer Minimalist */}
-      <footer className="py-12 border-t border-emerald-950/5 dark:border-emerald-900/10 px-6">
+      <footer className="mt-auto py-12 border-t border-emerald-950/5 dark:border-emerald-900/10 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-xl font-black text-emerald-950 dark:text-emerald-50">
             Adda<span className="gold-text">Ready</span>
