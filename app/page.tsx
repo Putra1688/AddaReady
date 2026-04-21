@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle, Star, ShieldCheck, Sparkles } from "lucide-react";
 import logoCircle from "./logo-circle.png";
+import PackageCarousel from "@/components/marketing/PackageCarousel";
 
 export default function Home() {
   return (
@@ -52,21 +53,18 @@ export default function Home() {
           <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-800 mb-8 slide-up">
               <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-              <span className="text-xs font-bold uppercase tracking-widest text-emerald-700 dark:text-emerald-300">
-                Premium Website Services
-              </span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-900 dark:text-emerald-50">Premium Website Services</span>
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-emerald-950 dark:text-emerald-50 leading-[1.1]">
               Elevate Your <span className="gold-text">Professional Identity</span> with AddaReady
             </h1>
             
-            <p className="mt-8 text-xl text-emerald-900/60 dark:text-emerald-100/60 leading-relaxed max-w-2xl">
-              Kami membangun representasi digital yang elegan, cepat, dan berdampak tinggi. 
-              Solusi terbaik untuk portofolio dan branding profesional Anda.
+            <p className="text-xl lg:text-2xl text-emerald-100/60 mb-12 max-w-2xl leading-relaxed slide-up" style={{ animationDelay: '0.2s' }}>
+              Kami membangun representasi digital yang elegan, cepat, dan berdampak tinggi. Solusi terbaik untuk portofolio dan branding profesional Anda.
             </p>
 
-            <div className="mt-12 flex flex-col sm:flex-row gap-4">
+            <div className="mt-12 flex flex-col sm:flex-row gap-4 slide-up" style={{ animationDelay: '0.3s' }}>
               <Link
                 href="/templates"
                 className="flex items-center justify-center gap-2 px-8 h-14 bg-emerald-900 dark:bg-emerald-500 text-white dark:text-emerald-950 font-bold rounded-full hover:scale-105 active:scale-95 transition-all shadow-xl shadow-emerald-900/20"
@@ -82,15 +80,20 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="mt-16 flex items-center gap-8 py-8 border-y border-emerald-900/5 dark:border-emerald-500/10 w-full justify-center flex-wrap">
-              <div className="flex items-center gap-2 text-emerald-900/40 dark:text-emerald-100/40 font-semibold uppercase tracking-tighter">
-                <ShieldCheck className="w-5 h-5" /> Secure
+            <div className="mt-16 flex items-center gap-8 py-8 border-y border-emerald-900/5 dark:border-emerald-500/10 w-full justify-center flex-wrap slide-up" style={{ animationDelay: '0.4s' }}>
+              <div className="flex flex-col items-center">
+                <span className="text-2xl font-black text-gold">100%</span>
+                <span className="text-[10px] uppercase tracking-widest text-emerald-100/40 font-bold">Premium Quality</span>
               </div>
-              <div className="flex items-center gap-2 text-emerald-900/40 dark:text-emerald-100/40 font-semibold uppercase tracking-tighter">
-                <Star className="w-5 h-5" /> Award Winning
+              <div className="w-px h-8 bg-emerald-100/10 hidden sm:block" />
+              <div className="flex flex-col items-center">
+                <span className="text-2xl font-black text-gold">24/7</span>
+                <span className="text-[10px] uppercase tracking-widest text-emerald-100/40 font-bold">Support Ready</span>
               </div>
-              <div className="flex items-center gap-2 text-emerald-900/40 dark:text-emerald-100/40 font-semibold uppercase tracking-tighter">
-                <CheckCircle className="w-5 h-5" /> Automated
+              <div className="w-px h-8 bg-emerald-100/10 hidden sm:block" />
+              <div className="flex flex-col items-center">
+                <span className="text-2xl font-black text-gold">Fast</span>
+                <span className="text-[10px] uppercase tracking-widest text-emerald-100/40 font-bold">Turnaround</span>
               </div>
             </div>
           </div>
@@ -98,37 +101,37 @@ export default function Home() {
       </section>
 
       {/* Featured Packs Preview */}
-      <section className="py-24 bg-emerald-50/50 dark:bg-[#011a14]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {['Good', 'Impressive', 'Excellent'].map((pkg, i) => (
-              <div key={pkg} className="group p-8 rounded-3xl bg-white dark:bg-[#022c22] border border-emerald-100 dark:border-emerald-900/50 hover:border-emerald-500 dark:hover:border-gold transition-all shadow-sm flex flex-col">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-900/30 flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400 group-hover:bg-gold/10 group-hover:text-gold transition-colors">
-                  {i === 0 ? <CheckCircle /> : i === 1 ? <ShieldCheck /> : <Star />}
-                </div>
-                <h3 className="text-2xl font-bold text-emerald-950 dark:text-emerald-50 mb-4 tracking-tight">Paket {pkg}</h3>
-                <p className="text-emerald-900/60 dark:text-emerald-100/60 text-sm leading-relaxed mb-8 flex-1">
-                  Solusi ideal untuk {i === 0 ? 'kebutuhan dasar profesional' : i === 1 ? 'branding yang lebih kuat' : 'standar industri tertinggi'}.
-                </p>
-                <Link href="/templates" className="text-emerald-900 dark:text-gold font-bold text-sm inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">
-                  Lihat Katalog <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            ))}
+      <section className="py-32 bg-emerald-950/5 dark:bg-[#011a14] relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+          <div className="absolute top-[20%] right-[10%] w-[30%] h-[30%] bg-gold filter blur-[100px] rounded-full animate-pulse" />
+        </div>
+
+        <div className="max-w-xld mx-auto px-6">
+          <div className="text-center mb-10 text-emerald-950 dark:text-emerald-50">
+            <h2 className="text-3xl lg:text-5xl font-bold tracking-tight mb-4">Pilih Paket <span className="gold-text">Terbaik Anda</span></h2>
+            <p className="text-emerald-900/60 dark:text-emerald-100/60 max-w-xl mx-auto">
+              Beragam pilihan paket yang dirancang untuk memenuhi standar profesional Anda dengan harga kompetitif.
+            </p>
           </div>
+
+          <PackageCarousel />
         </div>
       </section>
-      
-      {/* Footer */}
-      <footer className="mt-auto py-12 border-t border-emerald-900/5 dark:border-emerald-500/10">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-3 grayscale opacity-50">
-            <Image src={logoCircle} alt="AddaReady Logo" width={32} height={32} />
-            <span className="font-bold text-emerald-900 dark:text-emerald-50">AddaReady</span>
+
+      {/* Footer Minimalist */}
+      <footer className="py-12 border-t border-emerald-950/5 dark:border-emerald-900/10 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="text-xl font-black text-emerald-950 dark:text-emerald-50">
+            Adda<span className="gold-text">Ready</span>
           </div>
-          <p className="text-sm text-emerald-900/40 dark:text-emerald-100/40">
-            &copy; {new Date().getFullYear()} AddaReady. All rights reserved.
-          </p>
+          <div className="text-sm text-emerald-900/40 dark:text-emerald-100/40 font-medium">
+            © 2024 AddaReady Studio. Premium Digital Crafting.
+          </div>
+          <div className="flex gap-8 text-sm font-bold text-emerald-950 dark:text-emerald-50">
+            <Link href="#" className="hover:text-gold transition-colors">Instagram</Link>
+            <Link href="#" className="hover:text-gold transition-colors">Behance</Link>
+            <Link href="#" className="hover:text-gold transition-colors">LinkedIn</Link>
+          </div>
         </div>
       </footer>
     </div>

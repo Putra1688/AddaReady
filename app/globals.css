@@ -59,3 +59,24 @@ body {
 .gold-border {
   border-image: linear-gradient(to right, #bf953f, #fcf6ba, #aa771c) 1;
 }
+
+.glow-emerald {
+  box-shadow: 0 0 20px -5px rgba(16, 185, 129, 0.4), 0 0 40px -10px rgba(16, 185, 129, 0.2);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px -5px rgba(212, 175, 55, 0.4), 0 0 40px -10px rgba(212, 175, 55, 0.2);
+}
+
+.glow-emerald-intense {
+  box-shadow: 0 0 30px -5px rgba(16, 185, 129, 0.6), 0 0 60px -10px rgba(16, 185, 129, 0.3);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+.animate-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
