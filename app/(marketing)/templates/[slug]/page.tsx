@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { client } from "@/lib/sanity/client";
 import { templateBySlugQuery } from "@/lib/sanity/queries";
 import { urlForImage } from "@/lib/sanity/image";
+import { ArrowLeft, ExternalLink, MessageCircle, Sparkles } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -22,17 +23,18 @@ export default async function TemplateDetailsPage({ params }: TemplatePageProps)
   }
 
   return (
-    <div className="min-h-screen bg-white py-20 px-6 dark:bg-black">
+    <div className="min-h-screen bg-white dark:bg-[#022c22] py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <Link 
           href="/templates" 
-          className="text-sm font-medium text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-50 transition-colors"
-        >
-          ← Kembali ke Katalog
+          className="inline-flex items-center gap-2 text-sm font-bold text-emerald-900/40 hover:text-emerald-900 dark:text-emerald-100/40 dark:hover:text-gold transition-colors group"
+         >
+          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" /> Kembali ke Katalog
         </Link>
 
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-16">
-          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-3xl bg-zinc-100 shadow-2xl">
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          {/* Visual Preview */}
+          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[2rem] bg-emerald-50 dark:bg-emerald-950/20 shadow-2xl border border-emerald-100 dark:border-emerald-900/50">
             {template.thumbnail ? (
               <Image
                 src={urlForImage(template.thumbnail).url()}
@@ -40,46 +42,53 @@ export default async function TemplateDetailsPage({ params }: TemplatePageProps)
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             ) : (
-              <div className="flex h-full w-full items-center justify-center bg-zinc-200 dark:bg-zinc-800">
-                <span className="text-zinc-400">No Image</span>
+              <div className="flex h-full w-full items-center justify-center bg-emerald-100/50 dark:bg-emerald-900/30">
+                <span className="text-emerald-900/20 dark:text-emerald-100/20 font-bold uppercase tracking-widest">No Image</span>
               </div>
             )}
           </div>
 
-          <div className="flex flex-col justify-center">
-            <span className="inline-flex w-fit items-center rounded-full bg-indigo-100 px-3 py-1 text-xs font-medium text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300">
-              {template.category}
-            </span>
-            <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-5xl">
+          {/* Details Content */}
+          <div className="flex flex-col pt-4">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-[0.2em] mb-8 w-fit border border-emerald-100 dark:border-emerald-800">
+               <Sparkles className="w-3 h-3" /> {template.category} Package
+            </div>
+            
+            <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-emerald-950 dark:text-emerald-50 sm:leading-tight">
               {template.title}
             </h1>
             
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-wrap gap-3">
               {template.tech_stack?.map((tech: string) => (
-                <span key={tech} className="rounded-lg border border-zinc-200 py-1 px-3 text-sm text-zinc-600 dark:border-zinc-800 dark:text-zinc-400">
+                <span key={tech} className="rounded-xl bg-zinc-50 border border-zinc-100 dark:bg-emerald-900/20 dark:border-emerald-800 py-2 px-4 text-xs font-bold uppercase tracking-wider text-emerald-900/60 dark:text-emerald-100/60 transition-colors hover:border-gold hover:text-gold">
                   {tech}
                 </span>
               ))}
             </div>
 
-            <p className="mt-8 text-lg leading-8 text-zinc-600 dark:text-zinc-400 placeholder-opacity-50">
-              Template ini dirancang khusus untuk kategory {template.category} dengan standarisasi industri yang tinggi. 
-              Menggunakan teknologi {template.tech_stack?.join(", ")} untuk memastikan kecepatan akses dan kemudahan kustomisasi.
+            <p className="mt-10 text-xl leading-relaxed text-emerald-900/60 dark:text-emerald-100/60">
+              Template ini dirancang khusus untuk kategori <span className="text-emerald-900 dark:text-emerald-50 font-semibold">{template.category}</span> dengan standarisasi industri yang tinggi. 
+              Menggunakan teknologi modern untuk memastikan kecepatan akses dan kemudahan kustomisasi bagi bisnis Anda.
             </p>
 
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+            <div className="mt-12 flex flex-col sm:flex-row gap-6">
               <Link
                 href={template.demo_url || "#"}
                 target="_blank"
-                className="flex h-12 items-center justify-center rounded-full bg-zinc-900 px-8 text-sm font-semibold text-white transition-colors hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+                className="flex h-14 items-center justify-center gap-2 rounded-2xl bg-emerald-900 px-10 text-sm font-bold text-white transition-all hover:bg-emerald-800 hover:scale-[1.02] active:scale-95 dark:bg-emerald-500 dark:text-emerald-950 dark:hover:bg-gold shadow-xl shadow-emerald-900/10"
               >
-                Lihat Live Demo
+                Lihat Live Demo <ExternalLink className="w-4 h-4" />
               </Link>
-              <button className="flex h-12 items-center justify-center rounded-full border border-zinc-200 px-8 text-sm font-semibold text-zinc-900 transition-colors hover:bg-zinc-50 dark:border-zinc-800 dark:text-zinc-50 dark:hover:bg-zinc-900">
-                Hubungi Kami
-              </button>
+              <Link
+                href="https://wa.me/your-number"
+                target="_blank"
+                className="flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-emerald-900/10 px-10 text-sm font-bold text-emerald-900 transition-all hover:bg-emerald-50 dark:border-emerald-500/20 dark:text-emerald-50 dark:hover:bg-emerald-900/30"
+              >
+                <MessageCircle className="w-4 h-4" /> Hubungi Kami
+              </Link>
             </div>
           </div>
         </div>
