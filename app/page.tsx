@@ -4,6 +4,8 @@ import { ArrowRight, Sparkles } from "lucide-react";
 import logoCircle from "./logo-circle.png";
 import PackageCarousel from "@/components/marketing/PackageCarousel";
 import AdvantagesAccordion from "@/components/marketing/AdvantagesAccordion";
+import TestimonialCarousel from "@/components/marketing/TestimonialCarousel";
+import Navbar from "@/components/layout/Navbar";
 
 export default function Home() {
   return (
@@ -13,31 +15,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 w-[60%] h-[60%] bg-gold/10 filter blur-[150px] rounded-full" />
       </div>
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/80 dark:bg-[#022c22]/80 backdrop-blur-md border-b border-emerald-100 dark:border-emerald-900/50">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <Image src={logoCircle} alt="AddaReady Logo" width={40} height={40} priority />
-            <span className="text-xl font-bold tracking-tight text-emerald-900 dark:text-emerald-50">
-              Adda<span className="text-emerald-500">Ready</span>
-            </span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/templates" className="text-sm font-medium text-emerald-900/70 hover:text-emerald-900 dark:text-emerald-50/70 dark:hover:text-emerald-50 transition-colors">
-              Katalog
-            </Link>
-            <Link href="/services" className="text-sm font-medium text-emerald-900/70 hover:text-emerald-900 dark:text-emerald-50/70 dark:hover:text-emerald-50 transition-colors">
-              Layanan
-            </Link>
-            <Link 
-              href="/templates" 
-              className="bg-emerald-900 dark:bg-emerald-500 text-white dark:text-emerald-950 px-6 py-2.5 rounded-full text-sm font-semibold hover:shadow-lg transition-all"
-            >
-              Mulai Sekarang
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
@@ -124,6 +102,9 @@ export default function Home() {
 
       {/* Advantages Section */}
       <AdvantagesAccordion />
+
+      {/* Testimonials Section */}
+      <TestimonialCarousel />
 
       {/* Footer Minimalist */}
       <footer className="mt-auto py-12 border-t border-emerald-950/5 dark:border-emerald-900/10 px-6">
