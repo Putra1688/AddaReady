@@ -30,7 +30,7 @@ export default function TemplateGallery({ initialTemplates }: TemplateGalleryPro
               onClick={() => setFilter(cat)}
               className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
                 filter === cat
-                  ? 'bg-emerald-900 dark:bg-emerald-500 text-white dark:text-emerald-950 shadow-lg scale-105'
+                  ? 'bg-emerald-900 dark:bg-emerald-500 text-white dark:text-emerald-950 shadow-lg'
                   : 'bg-emerald-50/50 dark:bg-emerald-900/20 text-emerald-900/60 dark:text-emerald-50/60 hover:bg-emerald-100 dark:hover:bg-emerald-900/40'
               }`}
             >
