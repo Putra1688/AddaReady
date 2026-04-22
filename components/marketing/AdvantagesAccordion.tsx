@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { ChevronDown, Zap, Banknote, Infinity, MessageSquare, ArrowUpCircle } from "lucide-react";
 
 const ADVANTAGES = [
@@ -39,8 +40,35 @@ export default function AdvantagesAccordion() {
   };
 
   return (
-    <section className="py-24 bg-white dark:bg-[#022c22] relative overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
+    <section className="pb-24 pt-0 bg-white dark:bg-[#022c22] relative overflow-hidden group">
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {/* Mobile: Full Background (Clearer) */}
+        <div className="lg:hidden absolute inset-0 opacity-[0.25] dark:opacity-[0.2]">
+          <Image
+            src="/advantages-bg.png"
+            alt="Professional Accent"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/80 dark:from-[#022c22]/80 via-transparent to-white/80 dark:to-[#022c22]/80" />
+        </div>
+
+        {/* Desktop: Right-side Accent (Sharper & Clearer) */}
+        <div className="hidden lg:block absolute right-0 top-0 h-[100%] w-[55%] translate-x-[5%] opacity-80 dark:opacity-80">
+          <Image
+            src="/advantages-bg.png"
+            alt="Professional Accent"
+            fill
+            className="object-cover object-[right_10%]"
+          />
+          {/* Refined Gradient Masks: Only fades the left edge and very bottom */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white dark:from-[#022c22] via-transparent to-transparent w-[120%]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white dark:from-[#022c22] via-transparent to-transparent h-[40%] translate-y-[150%]" />
+        </div>
+      </div>
+
+      <div className="max-w-4xl mx-auto px-6 relative z-10 lg:ml-24 xl:ml-32 pt-24">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold tracking-tight text-emerald-950 dark:text-emerald-50 mb-4">
             Mengapa Memilih <span className="gold-text">AddaReady?</span>

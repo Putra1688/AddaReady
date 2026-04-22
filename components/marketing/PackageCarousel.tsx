@@ -76,8 +76,7 @@ export default function PackageCarousel() {
         </p>
 
         <Link
-          href={`https://wa.me/6283153248283?text=Halo%2C%20saya%20tertarik%20dengan%20Paket%20${pkg.name}`}
-          target="_blank"
+          href="/templates"
           className={`w-full py-4 rounded-2xl font-black text-[10px] uppercase tracking-widest transition-all ${
             isActive || isDesktop
               ? "bg-emerald-900 dark:bg-emerald-500 text-white dark:text-emerald-950 hover:shadow-xl hover:-translate-y-1"

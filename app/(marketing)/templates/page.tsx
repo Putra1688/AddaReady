@@ -16,7 +16,7 @@ export default async function TemplatesPage() {
           href="/" 
           className="inline-flex items-center gap-2 text-sm font-bold text-emerald-900/40 hover:text-emerald-900 dark:text-emerald-100/40 dark:hover:text-gold transition-colors group"
          >
-          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" /> Kembali ke Katalog
+          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" /> Kembali ke Beranda
         </Link>
         <header className="mb-20 text-center max-w-3xl mx-auto">
           <div className="inline-block px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6">
