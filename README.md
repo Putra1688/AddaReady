@@ -1,4 +1,4 @@
-# <p align="center">📦 AddaReady: Professional Portfolio Engine</p>
+# <p align="center">AddaReady: Professional Portfolio Engine</p>
 
 <p align="center">
   <strong> An automated web deployment system for professional branding and high-performance interactive catalogs.</strong>
