@@ -7,11 +7,11 @@ import { ChevronDown, HelpCircle } from "lucide-react";
 const FAQ_DATA = [
   {
     question: "Apa itu AddaReady?",
-    answer: "AddaReady adalah studio pembuatan website premium yang fokus pada pembuatan portofolio digital dan website profesional dengan estetika kelas dunia dan performa tinggi.",
+    answer: "AddaReady adalah studio pembuatan website premium yang fokus pada pembuatan portofolio digital melalui website profesional untuk membantu individu menemukan arah karier, meningkatkan kepercayaan diri, dan membangun citra profesional. Kami juga terbuka pada project lain menyesuaikan kebutuhan teknologi Anda",
   },
   {
     question: "Berapa lama proses pengerjaannya?",
-    answer: "Waktu pengerjaan bervariasi tergantung paket yang dipilih, namun rata-rata berkisar antara 3 hingga 7 hari kerja setelah semua konten diterima.",
+    answer: "Waktu pengerjaan bervariasi tergantung paket yang dipilih dan antrean yang ada, namun rata-rata berkisar antara 1 hingga 3 hari kerja setelah semua konten diterima.",
   },
   {
     question: "Apakah saya bisa melakukan kustomisasi desain?",
@@ -20,6 +20,10 @@ const FAQ_DATA = [
   {
     question: "Bagaimana jika saya ingin menambahkan halaman baru di kemudian hari?",
     answer: "Sangat bisa! Layanan kami bersifat upgradeable. Anda dapat menghubungi kami kapan saja untuk menambahkan fitur atau halaman baru pada website Anda.",
+  },
+  {
+    question: "Apakah ada layanan lain selain jasa pembuatan website portofolio?",
+    answer: "Kami juga terbuka pada project lain seperti Toko Online dengan akses kontrol katalog pada client, pembuatan aplikasi mobile, Monitoring data yang terhubung dengan spreadsheets, Optimasi SEO, dan juga Project lain yang berkaitan dengan teknologi ",
   },
   {
     question: "Apakah biaya yang dibayarkan sudah termasuk hosting dan domain?",
