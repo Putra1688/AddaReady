@@ -25,6 +25,7 @@ export default {
       options: {
         list: [
           { title: 'React', value: 'react' },
+          { title: 'Vue', value: 'vue' },
           { title: 'Next.js', value: 'nextjs' },
           { title: 'Native', value: 'native' },
           { title: 'Native Advance', value: 'native-advance' },
