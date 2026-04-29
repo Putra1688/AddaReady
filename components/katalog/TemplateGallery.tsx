@@ -22,8 +22,25 @@ export default function TemplateGallery({ initialTemplates }: TemplateGalleryPro
   return (
     <div className="space-y-12">
       {/* Search & Filter Header */}
-      <div className="flex flex-col md:flex-row gap-6 justify-between items-center bg-white dark:bg-emerald-950/20 p-6 rounded-3xl border border-emerald-100 dark:border-emerald-900/50 sticky top-24 z-40 backdrop-blur-md">
-        <div className="flex flex-wrap gap-2 justify-center">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-between items-center bg-white dark:bg-emerald-950/20 p-4 md:p-6 rounded-2xl md:rounded-3xl border border-emerald-100 dark:border-emerald-900/50 sticky top-24 z-40 backdrop-blur-md">
+        {/* Mobile Dropdown */}
+        <div className="w-full md:hidden relative">
+          <select 
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className="w-full px-4 py-3 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-900/50 text-emerald-950 dark:text-emerald-50 font-bold focus:outline-none focus:ring-2 focus:ring-emerald-500 appearance-none"
+          >
+            {categories.map((cat) => (
+              <option key={cat} value={cat} className="bg-white text-emerald-950 dark:bg-[#022c22] dark:text-emerald-50">{cat}</option>
+            ))}
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-emerald-950 dark:text-emerald-50">
+            <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path></svg>
+          </div>
+        </div>
+
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex flex-wrap gap-2 justify-center">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -39,7 +56,7 @@ export default function TemplateGallery({ initialTemplates }: TemplateGalleryPro
           ))}
         </div>
         
-        <div className="flex items-center gap-2 text-xs font-bold text-emerald-900/40 dark:text-emerald-100/40 uppercase tracking-widest px-4 py-2 bg-emerald-50/50 dark:bg-emerald-900/20 rounded-full border border-emerald-100 dark:border-emerald-900/30">
+        <div className="w-full md:w-auto flex items-center justify-center gap-2 text-xs font-bold text-emerald-900/40 dark:text-emerald-100/40 uppercase tracking-widest px-4 py-2.5 bg-emerald-50/50 dark:bg-emerald-900/20 rounded-xl md:rounded-full border border-emerald-100 dark:border-emerald-900/30">
            <Filter className="w-3 h-3" /> {filteredTemplates.length} Templates Found
         </div>
       </div>
