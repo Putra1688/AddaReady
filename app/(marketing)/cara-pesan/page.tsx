@@ -101,7 +101,7 @@ export default function OrderPage() {
             Adda<span className="gold-text">Ready</span>
           </div>
           <div className="text-sm text-emerald-900/40 dark:text-emerald-100/40 font-medium">
-            © 2024 AddaReady Studio. Premium Digital Crafting.
+            © 2024 AddaReady Studio. Website Portofolio & Branding Digital.
           </div>
         </div>
       </footer>

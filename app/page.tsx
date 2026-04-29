@@ -113,12 +113,12 @@ export default function Home() {
             Adda<span className="gold-text">Ready</span>
           </div>
           <div className="text-sm text-emerald-900/40 dark:text-emerald-100/40 font-medium">
-            © 2024 AddaReady Studio. Premium Digital Crafting.
+            © 2024 AddaReady Studio. Website Portofolio & Branding Digital.
           </div>
           <div className="flex gap-8 text-sm font-bold text-emerald-950 dark:text-emerald-50">
-            <Link href="#" className="hover:text-gold transition-colors">Instagram</Link>
-            <Link href="#" className="hover:text-gold transition-colors">Behance</Link>
-            <Link href="#" className="hover:text-gold transition-colors">LinkedIn</Link>
+            <Link href="https://www.instagram.com/addaready" className="hover:text-gold transition-colors">Instagram</Link>
+            <Link href="https://www.tiktok.com/@addaready" className="hover:text-gold transition-colors">Tiktok</Link>
+            <Link href="https://www.linkedin.com/in/ranggadsaputra" className="hover:text-gold transition-colors">LinkedIn</Link>
           </div>
         </div>
       </footer>
