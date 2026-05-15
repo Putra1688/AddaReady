@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://addaready.vercel.app"),
   title: {
     default: "AddaReady - Website Portofolio & Branding Digital",
     template: "%s | AddaReady",
@@ -63,6 +64,11 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "AQHgTCrxwhkMEHllfc_TqnHOKuGRBAwQw13kDxIrPG4",
+  },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
