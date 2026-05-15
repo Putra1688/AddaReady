@@ -18,7 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     const templates = await client.fetch(templatesQuery);
     templateRoutes = templates.map((template: any) => ({
-      url: `${baseUrl}/templates/${template.slug.current}`,
+      url: `${baseUrl}/templates/${template.slug}`,
       lastModified: new Date(template._updatedAt || new Date()),
       changeFrequency: "monthly" as const,
       priority: 0.6,
