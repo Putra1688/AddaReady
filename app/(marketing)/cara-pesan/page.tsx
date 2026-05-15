@@ -1,5 +1,11 @@
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cara Pemesanan",
+  description: "Panduan langkah demi langkah untuk memesan website portofolio premium Anda di AddaReady. Proses mudah, cepat, dan profesional.",
+};
 import { CheckCircle2, ClipboardList, PenTool, Layout, Send, MessageCircle } from "lucide-react";
 import Link from "next/link";
 

@@ -4,6 +4,12 @@ import TemplateGallery from "@/components/katalog/TemplateGallery";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Katalog Template",
+  description: "Jelajahi koleksi template website premium dari AddaReady. Temukan desain yang sempurna untuk portofolio dan branding profesional Anda.",
+};
 
 export const dynamic = "force-dynamic";
 

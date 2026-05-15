@@ -8,8 +8,31 @@ import TestimonialCarousel from "@/components/marketing/TestimonialCarousel";
 import Navbar from "@/components/layout/Navbar";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AddaReady",
+    "url": "https://addaready.vercel.app",
+    "logo": "https://addaready.vercel.app/logo-circle.png",
+    "description": "AddaReady membangun representasi digital yang elegan, cepat, dan dengan harga yang terjangkau. Solusi terbaik untuk portofolio dan branding profesional Anda.",
+    "sameAs": [
+      "https://www.instagram.com/addaready",
+      "https://www.tiktok.com/@addaready",
+      "https://www.linkedin.com/in/ranggadsaputra"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+6283153248283",
+      "contactType": "customer service"
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-white dark:bg-[#022c22]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="fixed inset-0 pointer-events-none -z-20 opacity-30 dark:opacity-20 translate-y-[-10%]">
         <div className="absolute top-0 right-0 w-[60%] h-[60%] bg-emerald-500/20 filter blur-[150px] rounded-full" />
         <div className="absolute bottom-0 left-0 w-[60%] h-[60%] bg-gold/10 filter blur-[150px] rounded-full" />
